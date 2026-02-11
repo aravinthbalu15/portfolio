@@ -13,7 +13,7 @@ const ProjectsSection = () => {
       <SectionHeading>My Projects</SectionHeading>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {projects.map((project) => (
-          <Card key={project.title} className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-2">
+          <Card key={project.title} className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-2 hover:scale-[1.02]">
             <CardHeader>
               <CardTitle className="font-headline text-2xl">{project.title}</CardTitle>
               <CardDescription>{project.description}</CardDescription>

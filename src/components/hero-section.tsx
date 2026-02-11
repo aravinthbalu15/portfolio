@@ -8,7 +8,7 @@ const HeroSection = () => {
   return (
     <section id="home" className="relative flex min-h-screen items-center justify-center text-center">
       <div className="absolute inset-0 bg-background/50"></div>
-      <div className="container relative z-10 mx-auto max-w-4xl px-4">
+      <div className="container relative z-10 mx-auto max-w-4xl px-4 animate-in fade-in zoom-in-95 duration-700">
         <h1 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl md:text-6xl lg:text-7xl">
           {personalInfo.name}
         </h1>

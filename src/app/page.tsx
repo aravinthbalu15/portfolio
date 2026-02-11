@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       <Header />
-      <main className="flex-1 animate-in fade-in duration-500">
+      <main className="flex-1">
         <HeroSection />
         <AboutSection />
         <SkillsSection />

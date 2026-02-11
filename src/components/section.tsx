@@ -9,7 +9,7 @@ type SectionProps = {
 
 export const Section = ({ id, children, className }: SectionProps) => {
   return (
-    <section id={id} className={cn('w-full max-w-6xl mx-auto py-16 px-4 sm:px-6 lg:px-8', className)}>
+    <section id={id} className={cn('w-full max-w-6xl mx-auto py-16 px-4 sm:px-6 lg:px-8 animate-in fade-in slide-in-from-bottom-12 duration-700 ease-out', className)}>
       {children}
     </section>
   );
