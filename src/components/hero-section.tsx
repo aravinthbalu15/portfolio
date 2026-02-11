@@ -49,9 +49,9 @@ const HeroSection = () => {
   return (
     <section id="home" className="relative flex min-h-screen items-center justify-center text-center">
       <div className="absolute inset-0 bg-background/50"></div>
-      <div className="container relative z-10 mx-auto max-w-6xl px-4 animate-in fade-in zoom-in-95 duration-700">
+      <div className="container relative z-10 mx-auto max-w-6xl px-4">
         <div className="flex flex-col items-center gap-8 md:flex-row-reverse md:items-center md:gap-12">
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 animate-in fade-in zoom-in-95 duration-500">
             <Image
               src="https://picsum.photos/seed/avatar/400/400"
               alt="Aravinth Kumar B"
@@ -62,7 +62,7 @@ const HeroSection = () => {
               data-ai-hint="profile picture"
             />
           </div>
-          <div className="flex-grow text-center md:text-left">
+          <div className="flex-grow text-center md:text-left animate-in fade-in slide-in-from-bottom-8 duration-700 delay-300">
             <h1 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl md:text-6xl lg:text-7xl">
               {personalInfo.name}
             </h1>

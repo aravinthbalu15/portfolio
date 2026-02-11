@@ -11,7 +11,7 @@ const EducationSection = () => {
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
         {/* Education & Achievements Column */}
         <div className="space-y-8">
-          <Card>
+          <Card className="transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
             <CardHeader className="flex flex-row items-start gap-4">
               <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
                 <education.icon className="h-5 w-5" />
@@ -27,7 +27,7 @@ const EducationSection = () => {
           <div className="space-y-4">
              <h3 className="text-2xl font-bold font-headline text-primary">Achievements</h3>
             {achievements.map((item, index) => (
-              <Card key={index} className="flex items-center p-4">
+              <Card key={index} className="flex items-center p-4 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary mr-4">
                   <item.icon className="h-5 w-5" />
                 </span>
@@ -40,7 +40,7 @@ const EducationSection = () => {
         {/* Certifications Column */}
         <div className="space-y-4">
           <h3 className="text-2xl font-bold font-headline text-primary">Certifications</h3>
-          <Card>
+          <Card className="transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
             <CardContent className="p-6 space-y-4">
               {certifications.map((cert, index) => (
                 <React.Fragment key={cert.title}>
