@@ -2,8 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import { personalInfo, contact, footer } from '@/lib/data';
 import { Separator } from './ui/separator';
-import { Button } from './ui/button';
-import { Download } from 'lucide-react';
 
 const Footer = () => {
   const socialLinks = [contact.github, contact.linkedin, contact.email];
@@ -13,10 +11,10 @@ const Footer = () => {
       <Separator />
       <div className="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col items-center gap-2">
-          <h3 className="text-2xl font-bold font-headline text-primary">{personalInfo.name}</h3>
-          <p className="text-lg text-muted-foreground">{personalInfo.title.split(' | ')[0]}</p>
+          <h3 className="text-2xl font-bold font-headline text-primary">Aravinth Kumar B</h3>
+          <p className="text-lg text-muted-foreground">Full-Stack Web Developer</p>
           <p className="max-w-xl text-center text-muted-foreground mt-2">
-            {footer.tagline}
+            Building scalable and secure full-stack web applications using modern technologies.
           </p>
           <div className="flex items-center gap-4 mt-4">
             {socialLinks.map((item, index) => (
@@ -34,15 +32,9 @@ const Footer = () => {
               </React.Fragment>
             ))}
           </div>
-           <Button asChild size="sm" variant="outline" className="mt-6">
-            <a href={personalInfo.resume} download>
-              <Download className="mr-2 h-4 w-4" />
-              Download Resume
-            </a>
-          </Button>
         </div>
         <p className="mt-8 text-center text-sm text-muted-foreground">
-          {footer.copyright}
+          © 2026 Aravinth Kumar B. All rights reserved.
         </p>
       </div>
     </footer>
