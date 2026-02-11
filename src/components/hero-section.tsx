@@ -56,9 +56,6 @@ const HeroSection = () => {
           <span>{text}</span>
           <span className="animate-blink font-light text-muted-foreground">|</span>
         </p>
-        <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-          {personalInfo.introduction.split('.').slice(0, 1).join('.') + '.'}
-        </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
             <Link href="#projects">
