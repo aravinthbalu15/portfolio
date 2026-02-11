@@ -37,14 +37,22 @@ const Header = () => {
   }, []);
 
   const NavLink = ({ href, label }: { href: string; label: string }) => (
-    <Button asChild variant="ghost" className={cn(
-        "transition-colors duration-300",
-        activeSection === href.substring(1) ? 'text-accent' : 'text-foreground hover:text-primary'
-      )}
+    <Link
+      href={href}
       onClick={() => setOpen(false)}
+      className={cn(
+        'group relative rounded-md px-3 py-2 text-sm font-medium transition-colors duration-300',
+        activeSection === href.substring(1) ? 'text-accent' : 'text-foreground'
+      )}
     >
-      <Link href={href}>{label}</Link>
-    </Button>
+      {label}
+      <span
+        className={cn(
+          'absolute bottom-1 left-0 h-0.5 w-full origin-left scale-x-0 transform bg-primary transition-transform duration-300',
+          activeSection === href.substring(1) ? 'scale-x-100' : 'group-hover:scale-x-100'
+        )}
+      />
+    </Link>
   );
 
   return (
