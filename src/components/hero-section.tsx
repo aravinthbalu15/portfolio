@@ -1,10 +1,50 @@
-import React from 'react';
+'use client';
+
+import React, { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Download, Eye, Send } from 'lucide-react';
 import { personalInfo } from '@/lib/data';
 
 const HeroSection = () => {
+  const roles = useMemo(() => personalInfo.title.split(' | '), []);
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [text, setText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const typingSpeed = 120;
+    const deletingSpeed = 60;
+    const pauseDuration = 2000;
+
+    let timer: ReturnType<typeof setTimeout>;
+
+    if (isDeleting) {
+      if (text.length > 0) {
+        timer = setTimeout(() => {
+          setText(t => t.slice(0, -1));
+        }, deletingSpeed);
+      } else {
+        setIsDeleting(false);
+        setRoleIndex(i => (i + 1) % roles.length);
+      }
+    } else { // is typing
+      const currentRole = roles[roleIndex];
+      if (text.length < currentRole.length) {
+        timer = setTimeout(() => {
+          setText(t => currentRole.slice(0, t.length + 1));
+        }, typingSpeed);
+      } else {
+        // Pause after typing is complete
+        timer = setTimeout(() => {
+          setIsDeleting(true);
+        }, pauseDuration);
+      }
+    }
+
+    return () => clearTimeout(timer);
+  }, [text, isDeleting, roleIndex, roles]);
+
   return (
     <section id="home" className="relative flex min-h-screen items-center justify-center text-center">
       <div className="absolute inset-0 bg-background/50"></div>
@@ -12,8 +52,9 @@ const HeroSection = () => {
         <h1 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl md:text-6xl lg:text-7xl">
           {personalInfo.name}
         </h1>
-        <p className="mt-4 font-headline text-xl font-medium text-foreground sm:text-2xl md:text-3xl">
-          {personalInfo.title}
+        <p className="mt-4 font-headline text-xl font-medium text-foreground sm:text-2xl md:text-3xl min-h-[4rem] md:min-h-[2.25rem]">
+          <span>{text}</span>
+          <span className="animate-blink font-light text-muted-foreground">|</span>
         </p>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
           {personalInfo.introduction.split('.').slice(0, 1).join('.') + '.'}
