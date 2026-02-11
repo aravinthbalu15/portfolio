@@ -16,19 +16,25 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
-      const sections = navLinks.map(link => document.getElementById(link.href.substring(1))).filter(s => s);
-      const homeSection = document.getElementById('home');
+      const sections = navLinks.map(link => document.getElementById(link.href.substring(1))).filter(Boolean) as HTMLElement[];
       
       let current = 'home';
-      if (homeSection && window.scrollY < homeSection.offsetHeight) {
-        current = 'home';
-      } else {
-        [...sections].reverse().forEach(section => {
-          if (section && window.scrollY >= section.offsetTop - 100) {
-            current = section.id;
+      const offset = 100;
+
+      for (const section of sections) {
+          if (window.scrollY >= section.offsetTop - offset) {
+              current = section.id;
           }
-        });
       }
+      
+      // A special check for the bottom of the page to ensure the last link is active.
+      if (window.innerHeight + Math.ceil(window.scrollY) >= document.body.offsetHeight) {
+        const lastSection = navLinks[navLinks.length - 1];
+        if (lastSection) {
+            current = lastSection.href.substring(1);
+        }
+      }
+
       setActiveSection(current);
     };
 
