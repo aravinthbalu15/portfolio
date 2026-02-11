@@ -29,11 +29,13 @@ export const personalInfo = {
 
 export const navLinks = [
   { href: '#about', label: 'About' },
+  { href: '#education', label: 'Education' },
   { href: '#skills', label: 'Skills' },
   { href: '#experience', label: 'Experience' },
   { href: '#projects', label: 'Projects' },
-  { href: '#education', label: 'Education' },
   { href: '#hackathons', label: 'Hackathons' },
+  { href: '#certifications', label: 'Certifications' },
+  { href: '#achievements', label: 'Achievements' },
   { href: '#contact', label: 'Contact' },
 ];
 
