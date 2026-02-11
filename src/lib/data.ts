@@ -82,7 +82,7 @@ export const projects = [
     techStack: ['React.js', 'Bootstrap', 'Node.js', 'Express.js', 'MongoDB', 'Cloudinary'],
     liveLink: 'https://www.stjosephskamplar.org',
     github: 'https://github.com/aravinthbalu15/stsojephchurch',
-    imageUrl: "https://picsum.photos/seed/church/600/400",
+    imageUrl: "https://images.unsplash.com/photo-1599797288294-8422d1797b98?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaHVyY2glMjB3ZWJzaXRlfGVufDB8fHx8MTc3MDc5NDU2N3ww&ixlib=rb-4.1.0&q=80&w=1080",
     imageHint: "church website"
   },
   {
@@ -91,18 +91,34 @@ export const projects = [
     techStack: ['React.js', 'Tailwind CSS'],
     liveLink: 'https://www.prpowerinfra.com',
     github: 'https://github.com/aravinthbalu15/pr-power',
-    imageUrl: "https://picsum.photos/seed/power/600/400",
+    imageUrl: "https://images.unsplash.com/photo-1651573088727-ac143de7d0ac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxjb21wYW55JTIwcG9ydGZvbGlvfGVufDB8fHx8MTc3MDc5NDUxM3ww&ixlib=rb-4.1.0&q=80&w=1080",
     imageHint: "company portfolio"
   },
 ];
 
-export const education = {
-  icon: GraduationCap,
-  degree: 'Bachelor of Engineering – Computer Science and Engineering',
-  college: 'Panimalar Engineering College',
-  years: '2022 – 2026',
-  cgpa: 'CGPA: 7.7',
-};
+export const education = [
+  {
+    icon: GraduationCap,
+    degree: 'Bachelor of Engineering – Computer Science and Engineering',
+    institution: 'Panimalar Engineering College',
+    years: '2022 – 2026',
+    score: 'CGPA: 7.7',
+  },
+  {
+    icon: GraduationCap,
+    degree: 'HSC (12th Standard)',
+    institution: '[Your Higher Secondary School Name]',
+    years: '2020 – 2022',
+    score: 'Percentage: [Your Percentage]%',
+  },
+  {
+    icon: GraduationCap,
+    degree: 'SSLC (10th Standard)',
+    institution: '[Your Secondary School Name]',
+    years: '2019 – 2020',
+    score: 'Percentage: [Your Percentage]%',
+  },
+];
 
 export const achievements = [
   {
