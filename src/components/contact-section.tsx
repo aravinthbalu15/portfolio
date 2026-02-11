@@ -20,6 +20,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Section, SectionHeading } from './section';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardContent } from '@/components/ui/card';
+import { personalInfo } from '@/lib/data';
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -118,6 +119,12 @@ const ContactSection = () => {
           </Form>
         </CardContent>
       </Card>
+      <p className="text-center text-muted-foreground mt-8">
+        Or email me directly at{' '}
+        <a href={`mailto:${personalInfo.email}`} className="text-primary hover:underline">
+          {personalInfo.email}
+        </a>
+      </p>
     </Section>
   );
 };

@@ -7,6 +7,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, Code2 } from 'lucide-react';
 import { navLinks, personalInfo } from '@/lib/data';
 import { cn } from '@/lib/utils';
+import { ThemeToggle } from './theme-toggle';
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -16,19 +17,20 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
+      
       const sections = navLinks.map(link => document.getElementById(link.href.substring(1))).filter(Boolean) as HTMLElement[];
       
       let current = 'home';
       const offset = 100;
 
       for (const section of sections) {
-          if (window.scrollY >= section.offsetTop - offset) {
+          const sectionTop = section.offsetTop;
+          if (window.scrollY >= sectionTop - offset) {
               current = section.id;
           }
       }
       
-      // A special check for the bottom of the page to ensure the last link is active.
-      if (window.innerHeight + Math.ceil(window.scrollY) >= document.body.offsetHeight) {
+      if (window.innerHeight + Math.ceil(window.scrollY) >= document.body.offsetHeight - 2) { 
         const lastSection = navLinks[navLinks.length - 1];
         if (lastSection) {
             current = lastSection.href.substring(1);
@@ -39,27 +41,32 @@ const Header = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const NavLink = ({ href, label }: { href: string; label: string }) => (
+  const NavLink = ({ href, label }: { href: string; label:string }) => {
+    const isActive = activeSection === href.substring(1);
+    return (
     <Link
       href={href}
       onClick={() => setOpen(false)}
       className={cn(
         'group relative rounded-md px-3 py-2 text-sm font-medium transition-colors duration-300',
-        activeSection === href.substring(1) ? 'text-accent' : 'text-foreground'
+        isActive
+          ? 'text-primary'
+          : 'text-foreground hover:text-primary'
       )}
     >
       {label}
       <span
         className={cn(
           'absolute bottom-1 left-0 h-0.5 w-full origin-left scale-x-0 transform bg-primary transition-transform duration-300',
-          activeSection === href.substring(1) ? 'scale-x-100' : 'group-hover:scale-x-100'
+          isActive ? 'scale-x-100' : 'group-hover:scale-x-100'
         )}
       />
     </Link>
-  );
+  )};
 
   return (
     <header className={cn(
@@ -71,26 +78,29 @@ const Header = () => {
           <Code2 className="h-6 w-6" />
           <span>{personalInfo.name}</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-1">
-          {navLinks.map(link => <NavLink key={link.href} {...link} />)}
-        </nav>
-        <div className="md:hidden">
-          <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Menu />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right">
-              <div className="flex flex-col gap-4 py-8">
-                <Link href="#home" className="flex items-center gap-2 font-bold font-headline text-lg text-primary mb-4" onClick={() => setOpen(false)}>
-                  <Code2 className="h-6 w-6" />
-                  <span>{personalInfo.name}</span>
-                </Link>
-                {navLinks.map(link => <NavLink key={link.href} {...link} />)}
-              </div>
-            </SheetContent>
-          </Sheet>
+        <div className="flex items-center gap-2">
+            <nav className="hidden md:flex items-center gap-1">
+              {navLinks.map(link => <NavLink key={link.href} {...link} />)}
+            </nav>
+            <ThemeToggle />
+            <div className="md:hidden">
+              <Sheet open={open} onOpenChange={setOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <Menu />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right">
+                  <div className="flex flex-col gap-4 py-8">
+                    <Link href="#home" className="flex items-center gap-2 font-bold font-headline text-lg text-primary mb-4" onClick={() => setOpen(false)}>
+                      <Code2 className="h-6 w-6" />
+                      <span>{personalInfo.name}</span>
+                    </Link>
+                    {navLinks.map(link => <NavLink key={link.href} {...link} />)}
+                  </div>
+                </SheetContent>
+              </Sheet>
+            </div>
         </div>
       </div>
     </header>

@@ -2,6 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import { personalInfo, contact, footer } from '@/lib/data';
 import { Separator } from './ui/separator';
+import { Button } from './ui/button';
+import { Download } from 'lucide-react';
 
 const Footer = () => {
   const socialLinks = [contact.github, contact.linkedin, contact.email];
@@ -32,6 +34,12 @@ const Footer = () => {
               </React.Fragment>
             ))}
           </div>
+           <Button asChild size="sm" variant="outline" className="mt-6">
+            <a href={personalInfo.resume} download>
+              <Download className="mr-2 h-4 w-4" />
+              Download Resume
+            </a>
+          </Button>
         </div>
         <p className="mt-8 text-center text-sm text-muted-foreground">
           {footer.copyright}

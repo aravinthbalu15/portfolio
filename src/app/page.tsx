@@ -10,6 +10,7 @@ import CertificationsSection from '@/components/certifications-section';
 import AchievementsSection from '@/components/achievements-section';
 import ContactSection from '@/components/contact-section';
 import Footer from '@/components/footer';
+import BackToTopButton from '@/components/back-to-top-button';
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
+      <BackToTopButton />
     </div>
   );
 }
