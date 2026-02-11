@@ -176,6 +176,6 @@ export const contact = {
 };
 
 export const footer = {
-  tagline: "Building scalable and secure full-stack web applications.",
-  copyright: `© ${new Date().getFullYear()} Aravinth Kumar B. All Rights Reserved.`,
+  tagline: "Building scalable and secure full-stack web applications using modern technologies.",
+  copyright: `© 2026 Aravinth Kumar B. All rights reserved.`,
 };
