@@ -24,7 +24,7 @@ export const personalInfo = {
   phone: "+91 8248588520",
   linkedin: "https://linkedin.com/in/aravinth-kumar-858851281",
   github: "https://github.com/aravinthbalu15",
-  resume: "/Aravinth_Kumar_B_Resume.pdf",
+  resume: "https://drive.google.com/file/d/1pvIy2S-NgxSGkeNCxMhDMD6zZGpjWb-7/view?usp=drivesdk",
 };
 
 export const navLinks = [
@@ -48,7 +48,7 @@ export const skills = [
   {
     category: 'Frontend',
     icon: AppWindow,
-    list: ['HTML5', 'CSS3', 'Bootstrap', 'React.js', 'Tailwind CSS'],
+    list: ['HTML5', 'CSS3', 'Bootstrap', 'React.js', 'Tailwind CSS', 'Boostrap'],
   },
   {
     category: 'Backend',
@@ -107,17 +107,10 @@ export const education = [
   {
     icon: GraduationCap,
     degree: 'HSC (12th Standard)',
-    institution: '[Your Higher Secondary School Name]',
+    institution: 'Government Higher Secondary School, Kambur',
     years: '2020 – 2022',
-    score: 'Percentage: [Your Percentage]%',
-  },
-  {
-    icon: GraduationCap,
-    degree: 'SSLC (10th Standard)',
-    institution: '[Your Secondary School Name]',
-    years: '2019 – 2020',
-    score: 'Percentage: [Your Percentage]%',
-  },
+    score: 'Percentage: 79.1%',
+  }
 ];
 
 export const achievements = [
