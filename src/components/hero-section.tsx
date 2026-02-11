@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Download, Eye, Send } from 'lucide-react';
 import { personalInfo } from '@/lib/data';
@@ -48,33 +49,48 @@ const HeroSection = () => {
   return (
     <section id="home" className="relative flex min-h-screen items-center justify-center text-center">
       <div className="absolute inset-0 bg-background/50"></div>
-      <div className="container relative z-10 mx-auto max-w-4xl px-4 animate-in fade-in zoom-in-95 duration-700">
-        <h1 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl md:text-6xl lg:text-7xl">
-          {personalInfo.name}
-        </h1>
-        <p className="mt-4 font-headline text-xl font-medium text-foreground sm:text-2xl md:text-3xl min-h-[4rem] md:min-h-[2.25rem]">
-          <span>{text}</span>
-          <span className="animate-blink font-light text-muted-foreground">|</span>
-        </p>
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-            <Link href="#projects">
-              <Eye className="mr-2 h-5 w-5" />
-              View Projects
-            </Link>
-          </Button>
-          <Button asChild size="lg" variant="outline">
-            <a href={personalInfo.resume} download>
-              <Download className="mr-2 h-5 w-5" />
-              Download Resume
-            </a>
-          </Button>
-          <Button asChild size="lg" variant="secondary">
-            <Link href="#contact">
-              <Send className="mr-2 h-5 w-5" />
-              Contact Me
-            </Link>
-          </Button>
+      <div className="container relative z-10 mx-auto max-w-6xl px-4 animate-in fade-in zoom-in-95 duration-700">
+        <div className="flex flex-col items-center gap-8 md:flex-row-reverse md:items-center md:gap-12">
+          <div className="flex-shrink-0">
+            <Image
+              src="https://picsum.photos/seed/avatar/400/400"
+              alt="Aravinth Kumar B"
+              width={240}
+              height={240}
+              className="rounded-full border-4 border-primary/20 object-cover shadow-lg"
+              priority
+              data-ai-hint="profile picture"
+            />
+          </div>
+          <div className="flex-grow text-center md:text-left">
+            <h1 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl md:text-6xl lg:text-7xl">
+              {personalInfo.name}
+            </h1>
+            <p className="mt-4 font-headline text-xl font-medium text-foreground sm:text-2xl md:text-3xl min-h-[4rem] md:min-h-[2.25rem]">
+              <span>{text}</span>
+              <span className="animate-blink font-light text-muted-foreground">|</span>
+            </p>
+            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row md:justify-start">
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                <Link href="#projects">
+                  <Eye className="mr-2 h-5 w-5" />
+                  View Projects
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline">
+                <a href={personalInfo.resume} download>
+                  <Download className="mr-2 h-5 w-5" />
+                  Download Resume
+                </a>
+              </Button>
+              <Button asChild size="lg" variant="secondary">
+                <Link href="#contact">
+                  <Send className="mr-2 h-5 w-5" />
+                  Contact Me
+                </Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
