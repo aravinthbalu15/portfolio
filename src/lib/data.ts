@@ -79,6 +79,8 @@ export const projects = [
     techStack: ['React.js', 'Bootstrap', 'Node.js', 'Express.js', 'MongoDB', 'Cloudinary'],
     liveLink: 'https://www.stjosephskamplar.org',
     github: 'https://github.com/aravinthbalu15/stsojephchurch',
+    imageUrl: "https://picsum.photos/seed/church/600/400",
+    imageHint: "church website"
   },
   {
     title: 'PR Power Infrastructure Website',
@@ -86,6 +88,8 @@ export const projects = [
     techStack: ['React.js', 'Tailwind CSS'],
     liveLink: 'https://www.prpowerinfra.com',
     github: 'https://github.com/aravinthbalu15/pr-power',
+    imageUrl: "https://picsum.photos/seed/power/600/400",
+    imageHint: "company portfolio"
   },
 ];
 
