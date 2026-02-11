@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Download, Eye, Send } from 'lucide-react';
 import { personalInfo } from '@/lib/data';
@@ -47,6 +48,14 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="relative flex min-h-screen items-center justify-center text-center">
+      <Image
+        src="https://picsum.photos/seed/coding/1920/1080"
+        alt="Professional coding background"
+        fill
+        priority
+        className="object-cover"
+        data-ai-hint="coding setup"
+      />
       <div className="absolute inset-0 bg-background/50"></div>
       <div className="container relative z-10 mx-auto max-w-6xl px-4">
         <div className="flex flex-col items-center gap-8">
