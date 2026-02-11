@@ -12,7 +12,7 @@ const ProjectsSection = () => {
   return (
     <Section id="projects">
       <SectionHeading>My Projects</SectionHeading>
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 max-w-5xl mx-auto">
         {projects.map((project) => (
           <Card key={project.title} className="group flex flex-col overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-2 hover:scale-[1.02]">
             {project.imageUrl && (
