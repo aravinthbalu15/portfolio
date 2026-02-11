@@ -49,12 +49,12 @@ const HeroSection = () => {
   return (
     <section id="home" className="relative flex min-h-screen items-center justify-center text-center">
       <Image
-        src="https://picsum.photos/seed/coding/1920/1080"
-        alt="Professional coding background"
+        src="https://images.unsplash.com/photo-1550439062-609e1531270e"
+        alt="Developer desk with code on screen"
         fill
         priority
         className="object-cover"
-        data-ai-hint="coding setup"
+        data-ai-hint="coding desk"
       />
       <div className="absolute inset-0 bg-background/50"></div>
       <div className="container relative z-10 mx-auto max-w-6xl px-4">
