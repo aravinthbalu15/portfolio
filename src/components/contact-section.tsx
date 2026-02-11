@@ -60,7 +60,7 @@ const ContactSection = () => {
   return (
     <Section id="contact">
       <SectionHeading>Contact Me</SectionHeading>
-      <p className="max-w-2xl mx-auto text-center text-lg text-muted-foreground mb-12">
+      <p className="max-w-2xl mx-auto text-center text-base sm:text-lg text-muted-foreground mb-12">
         Have a question or want to work together? Leave your details and I'll get back to you as soon as possible.
       </p>
       <Card className="max-w-xl mx-auto p-2 sm:p-4 md:p-6 lg:p-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/20">

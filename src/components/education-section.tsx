@@ -10,7 +10,7 @@ const EducationSection = () => {
       <div className="max-w-2xl mx-auto space-y-6">
         {education.map((edu, index) => (
           <Card key={index} className="transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
-            <CardHeader className="flex flex-row items-start gap-4">
+            <CardHeader className="flex flex-col items-center text-center sm:flex-row sm:items-start sm:text-left gap-4">
               <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary flex-shrink-0">
                 <edu.icon className="h-6 w-6" />
               </span>

@@ -63,24 +63,24 @@ const HeroSection = () => {
             <h1 className="font-headline text-4xl font-bold tracking-tight text-primary sm:text-5xl md:text-6xl lg:text-7xl">
               {personalInfo.name}
             </h1>
-            <p className="mt-4 font-headline text-xl font-medium text-foreground sm:text-2xl md:text-3xl min-h-[4rem] md:min-h-[2.25rem]">
+            <p className="mt-4 font-headline text-xl font-medium text-foreground sm:text-2xl md:text-3xl min-h-[6rem] sm:min-h-[4rem] md:min-h-[2.25rem]">
               <span>{text}</span>
               <span className="animate-blink font-light text-muted-foreground">|</span>
             </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+            <div className="mt-10 flex w-full max-w-sm flex-col items-center justify-center gap-4 sm:max-w-none sm:flex-row">
+              <Button asChild size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground sm:w-auto">
                 <Link href="#projects">
                   <Eye className="mr-2 h-5 w-5" />
                   View Projects
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline">
+              <Button asChild size="lg" variant="outline" className="w-full sm:w-auto">
                 <a href={personalInfo.resume} download>
                   <Download className="mr-2 h-5 w-5" />
                   Download Resume
                 </a>
               </Button>
-              <Button asChild size="lg" variant="secondary">
+              <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto">
                 <Link href="#contact">
                   <Send className="mr-2 h-5 w-5" />
                   Contact Me
