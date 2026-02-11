@@ -4,7 +4,7 @@ import { personalInfo, contact, footer } from '@/lib/data';
 import { Separator } from './ui/separator';
 
 const Footer = () => {
-  const socialLinks = [contact.github, contact.linkedin, contact.email];
+  const socialLinks = [contact.github, contact.linkedin, contact.email, contact.phone];
 
   return (
     <footer className="bg-card text-center">
@@ -16,20 +16,18 @@ const Footer = () => {
           <p className="max-w-xl text-center text-muted-foreground mt-2">
             Building scalable and secure full-stack web applications using modern technologies.
           </p>
-          <div className="flex items-center gap-4 mt-4">
-            {socialLinks.map((item, index) => (
-              <React.Fragment key={item.href}>
-                <a 
-                  href={item.href} 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-                  aria-label={item.value}
-                >
-                  {item.value === personalInfo.email ? 'Email' : item.value}
-                </a>
-                {index < socialLinks.length - 1 && <span className="text-muted-foreground">|</span>}
-              </React.Fragment>
+          <div className="flex items-center gap-6 mt-6">
+            {socialLinks.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-all duration-300 transform hover:scale-110"
+                aria-label={item.value}
+              >
+                <item.icon className="h-6 w-6" />
+              </a>
             ))}
           </div>
         </div>
