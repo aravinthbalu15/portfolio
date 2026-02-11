@@ -18,7 +18,7 @@ import {
 
 export const personalInfo = {
   name: "Aravinth Kumar B",
-  title: "Full-Stack Web Developer | MERN Stack Developer",
+  title: "MERN Stack Developer | Java Developer",
   introduction: "I am currently pursuing a Bachelor of Engineering in Computer Science and Engineering and specialize in building secure, scalable, and user-friendly web applications using the MERN stack. I have completed an internship focused on CAPTCHA-based authentication systems and backend security, gaining hands-on experience in RESTful APIs and modern web development.",
   email: "aravinthbalu15@gmail.com",
   phone: "+91 8248588520",
