@@ -11,7 +11,8 @@ import {
   GraduationCap,
   Award,
   BookMarked,
-  Briefcase
+  Briefcase,
+  Trophy,
 } from 'lucide-react';
 
 export const personalInfo = {
@@ -31,6 +32,7 @@ export const navLinks = [
   { href: '#experience', label: 'Experience' },
   { href: '#projects', label: 'Projects' },
   { href: '#education', label: 'Education' },
+  { href: '#hackathons', label: 'Hackathons' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -101,6 +103,15 @@ export const achievements = [
     title: 'TCS iON National Qualifier Test (NQT) – 72%',
     description: '',
   }
+];
+
+export const hackathons = [
+  {
+    icon: Trophy,
+    title: 'Smart India Hackathon 2023',
+    description: 'Developed a project for the Ministry of Education. Our team was a finalist in this national level hackathon.',
+    date: 'December 2023',
+  },
 ];
 
 export const certifications = [

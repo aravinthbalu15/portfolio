@@ -6,7 +6,7 @@ import { Separator } from '@/components/ui/separator';
 
 const EducationSection = () => {
   return (
-    <Section id="education" className="bg-card">
+    <Section id="education">
       <SectionHeading>Education & Certifications</SectionHeading>
       <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
         {/* Education & Achievements Column */}
